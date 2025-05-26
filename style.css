@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap');
+
+:root {
+  --cor-de-fundo: #121212;
+  --branco: #E0E0E0;
+  --verde: #4ade80;
+  --botao-ativo: #27272a;
+  --botao-inativo: #3f3f46;
+  --texto-fundo: #1e1e1e;
+}
+
+body.light {
+  --cor-de-fundo: #f9fafb;
+  --branco: #111827;
+  --verde: #16a34a;
+  --botao-ativo: #d1d5db;
+  --botao-inativo: #e5e7eb;
+  --texto-fundo: #f3f4f6;
+}
+
+body {
+  background-color: var(--cor-de-fundo);
+  color: var(--branco);
+  font-family: 'Chakra Petch', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#toggle-tema {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--texto-fundo);
+  color: var(--branco);
+  border: none;
+  padding: 0.5em 1em;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+  z-index: 1000;
+}
+
+#toggle-tema:hover {
+  background: var(--botao-ativo);
+}
+
+.conteudo-principal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.titulo-principal {
+  text-align: left;
+  width: 100%;
+  font-size: 32px;
+}
+
+.titulo-principal span {
+  color: var(--verde);
+}
+
+.botoes {
+  display: block;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.botao {
+  background-color: var(--botao-inativo);
+  color: var(--branco);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  font-size: 18px;
+  width: 100%;
+  border: none;
+  border-bottom: 4px solid var(--botao-ativo);
+  border-left: 2px solid var(--botao-ativo);
+  border-right: 2px solid var(--botao-ativo);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.botao:hover {
+  transform: translateY(-2px);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.botao:first-child {
+  border-radius: 40px 40px 0 0;
+}
+
+.botao.ativo {
+  background-color: var(--botao-ativo);
+  border-bottom: 4px solid var(--verde);
+}
+
+.abas-textos {
+  background-color: var(--texto-fundo);
+  padding: 40px;
+  border-radius: 0 0 40px 40px;
+  margin-top: 16px;
+}
+
+.aba-conteudo {
+  display: none;
+}
+
+.aba-conteudo.ativo {
+  display: block;
+}
+
+.aba-conteudo-titulo-principal {
+  font-size: 28px;
+  text-align: center;
+}
+
+.aba-conteudo-titulo-secundario {
+  text-align: center;
+  color: var(--verde);
+  text-transform: uppercase;
+}
+
+.contador {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contador-digito {
+  padding: 0 16px;
+  text-align: center;
+  min-width: 100px;
+}
+
+.contador-digito-numero {
+  font-size: 80px;
+  margin: 0;
+}
+
+.contador-digito-texto {
+  color: var(--verde);
+  font-size: 20px;
+  margin: 0;
+}
+
+.editar-data {
+  background: transparent;
+  color: var(--verde);
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  margin-left: 8px;
+}
+
+.input-data {
+  margin: 10px auto;
+  display: block;
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid var(--botao-ativo);
+  background-color: var(--texto-fundo);
+  color: var(--branco);
+  font-family: inherit;
+}
+
+body.light .input-data {
+  color: var(--branco);
+}
+
+@media screen and (min-width: 768px) {
+  .botoes {
+    display: flex;
+  }
+
+  .botao:first-child {
+    border-radius: 40px 0 0 0;
+  }
+
+  .botao:last-child {
+    border-radius: 0 40px 0 0;
+  }
+}
